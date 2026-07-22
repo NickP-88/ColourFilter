@@ -1,10 +1,12 @@
+[Download the compiled binary from the releases page →](https://github.com/NickP-88/ColourFilter/releases/tag/v1.0)
+
 ## Compatibility
 
-**Colour Filter** is a night light and colour filter tray app for X11 Linux systems. 
+**Colour Filter** is a night light and colour filter tray app for x86 64-bit Linux systems running an X11 display server. 
 
-**It does not currently support multiple displays or Wayland systems**
+**It does not currently support multiple displays or Wayland systems.**
 
-You will need the following dependencies, then you can build with the command:
+You will need the following dependencies, and you can build with the command:
 
 gcc -std=gnu11 -O2 -Wall -Wextra -o "Colour Filter" ColourFilter.c $(pkg-config --cflags --libs gtk+-3.0 ayatana-appindicator3-0.1 x11 xrandr libconfig)
 
@@ -15,16 +17,21 @@ The icon image should appear in the tray automatically upon opening the app. Rig
 The four sliders will set the colour balance and brightness. If the filter is off then it will turn on for a few seconds to preview your new setting. Colour settings can be turned down to 0 individually, however note that you are prevented from turning them all to 0 at the same time, as this would render the display completely blank. 
 
 Filter mode is set by the middle button at the bottom of the window: 
+
 **Time** will turn the filter on and off based on the **Start Time** and **End Time**, which can each be set with their drop-down boxes. 
 **On** means the filter is always on regardless of the time.
 **Off** means the filter is always off regardless of the time.
 
 ## Config Settings
 
-There are 3 additional settings the user may want to adjust in the **config.cfg** file:
+There are 3 additional settings you may want to adjust in the **config.cfg** file:
+
 **CheckSeconds** is how frequently the time will be checked to see if the filter should be turned on or off. By default it is every 20 seconds. 
+
 **EaseSteps** is how many steps the easing process will take. More steps means smoother easing. A value of 1 will turn the filter directly on and off with no easing.
+
 **StepTime** is the length of time in seconds between ease steps. 50 ease steps at 0.1 seconds each will mean it takes 5 seconds to fully transition the filter on or off. You may choose larger values if you want a longer and smoother transition, or smaller values if you want a faster transition. 
+
 Note that this ease time also applies to fading out previewed values.
 
 ## In Case of Emergency
@@ -37,4 +44,4 @@ This was made as a personal project which is on hold now since I'm no longer usi
 
 ## License
 
-Released under the MIT license.
+Released under MIT license.
